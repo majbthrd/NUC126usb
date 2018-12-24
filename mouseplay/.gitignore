@@ -1,0 +1,5 @@
+*.bak
+NUC126mouseplay THUMB Debug/*
+NUC126mouseplay THUMB Release/*
+*.hzs
+

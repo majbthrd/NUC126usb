@@ -1,0 +1,4 @@
+*.bak
+NUC126vcp THUMB Debug/*
+NUC126vcp THUMB Release/*
+*.hzs
