@@ -120,9 +120,6 @@ static void sys_init(void)
   /* Set core clock */
   CLK_SetCoreClock(72000000);
 
-  /* Use HIRC as UART clock source */
-  CLK_SetModuleClock(UART0_MODULE, CLK_CLKSEL1_UARTSEL_HIRC, CLK_CLKDIV0_UART(1));
-
   /* Use PLL as USB clock source */
   CLK_SetModuleClock(USBD_MODULE, CLK_CLKSEL3_USBDSEL_PLL, CLK_CLKDIV0_USB(3));
 
@@ -136,25 +133,13 @@ static void sys_init(void)
   /* Switch HCLK clock source to Internal RC and HCLK source divide 1 */
   CLK_SetHCLK(CLK_CLKSEL0_HCLKSEL_HIRC48, CLK_CLKDIV0_HCLK(1));
 
-  /* Use HIRC as UART clock source */
-  CLK_SetModuleClock(UART0_MODULE, CLK_CLKSEL1_UARTSEL_HIRC, CLK_CLKDIV0_UART(1));
-
   /* Use HIRC48 as USB clock source */
   CLK_SetModuleClock(USBD_MODULE, CLK_CLKSEL3_USBDSEL_HIRC48, CLK_CLKDIV0_USB(1));
 #endif
 
   /* Enable module clock */
-  CLK_EnableModuleClock(UART0_MODULE);
   CLK_EnableModuleClock(USBD_MODULE);
 
-
-  /*---------------------------------------------------------------------------------------------------------*/
-  /* Init I/O Multi-function                                                                                 */
-  /*---------------------------------------------------------------------------------------------------------*/
-
-  /* Set P3 multi-function pins for UART0 RXD and TXD */
-  SYS->GPD_MFPL &= ~(SYS_GPD_MFPL_PD0MFP_Msk | SYS_GPD_MFPL_PD1MFP_Msk);
-  SYS->GPD_MFPL |= SYS_GPD_MFPL_PD0MFP_UART0_RXD | SYS_GPD_MFPL_PD1MFP_UART0_TXD;
 
   uint32_t sn = fmc_uid();
 

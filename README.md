@@ -16,7 +16,7 @@ It uses a new USB device stack written specifically for the NUC126 and uses an A
 
 ## Build Requirements
 
-One approach is to use [Rowley Crossworks for ARM](http://www.rowley.co.uk/arm/) to compile this code.  It is not free software, but has been my favorite go-to ARM development tool for a decade and counting.
+One approach is to use [Rowley Crossworks for ARM](http://www.rowley.co.uk/arm/) to compile this code.  It is not free software, but has been my favorite go-to ARM development tool for a decade and counting.  Rowley does not officially support the Nuvoton NUC126, but you can [download an open-source CPU support package for the NUC126](https://github.com/majbthrd/MCUmisfits/).
 
 *OR*
 
