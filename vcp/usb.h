@@ -61,6 +61,7 @@ void usb_control_recv(void (*callback)(uint8_t *data, int size));
 void usb_task(void);
 void usb_configuration_callback(int config);
 void usb_set_callback(int ep, void (*callback)(uint8_t *data, int size));
+void usb_sof_callback(void);
 
 #endif // _USB_H_
 
