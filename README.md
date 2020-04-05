@@ -14,6 +14,10 @@ This code, in contrast, is written for gcc and clang.
 
 It uses a new USB device stack written specifically for the NUC126 and uses an API modeled on [vcp](https://github.com/ataradov/vcp).  vcp was written for the SAMD11 / SAMD21.  Since the USB stack APIs are nearly the same, code can be more easily ported between the ataradov vcp USB stack and this NUC126usb one (as well as [NUC121](https://github.com/majbthrd/NUC121usb/)).  Another advantage of this approach is that the code size is a little more efficient than the Nuvoton reference code.
 
+## Alternatives
+
+I've also contributed a NUC121/NUC125/NUC126 driver to [TinyUSB](https://github.com/hathach/tinyusb).  Since TinyUSB runs on many different microcontrollers, code originally written for one device can often be readily adapted to many others.
+
 ## Build Requirements
 
 One approach is to use [Rowley Crossworks for ARM](http://www.rowley.co.uk/arm/) to compile this code.  It is not free software, but has been my favorite go-to ARM development tool for a decade and counting.  Rowley does not officially support the Nuvoton NUC126, but you can [download an open-source CPU support package for the NUC126](https://github.com/majbthrd/MCUmisfits/).
